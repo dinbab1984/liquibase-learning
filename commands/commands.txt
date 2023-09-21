@@ -1,0 +1,39 @@
+//generate SQLs for 
+liquibase --changeLogFile=myfirstchangelog.xml updateSQL
+//run changes on db
+liquibase --changeLogFile=myfirstchangelog.xml update
+//check history of changes
+liquibase history
+//status - shows undeployed changes
+liquibase --changeLogFile=myfirstchangelog.sql status --verbose
+//rollback changes 
+////specific date or time
+liquibase --changeLogFile=myfirstchangelog.xml rollbackToDateSQL 2023-09-01
+liquibase --changeLogFile=myfirstchangelog.xml rollbackToDate 2023-09-01
+////specific changes count
+liquibase --changeLogFile=myfirstchangelog.xml rollbackCountSQL 
+liquibase --changeLogFile=myfirstchangelog.xml rollbackCount 1
+////specifc tag
+liquibase tag release1
+liquibase --changeLogFile=myfirstchangelog.xml rollbackSQL release1
+liquibase --changeLogFile=myfirstchangelog.xml rollback release1
+//diff command to compare with reference database to find the missing objects
+liquibase diff
+//generate changeLogFile for the missing objects
+liquibase --changeLogFile=diffchangelog.xml diffChangeLog 
+// --diffTypes=<catalogs,tables,functions,views,columns,indexes,foreignkeys> to filter types
+//e.g. changelog for missing columns
+liquibase --changeLogFile=diffchangelog.xml diffChangeLog --diffTypes=column
+//snapshot current state of databse
+liquibase snapShot
+liquibase --outputFile=snapshotJSON20230932.json snapShot --snapshotFormat=json
+//generate snapshot changelog file
+liquibase --changeLogFile=snapshotchangelog.xml generateChangeLog
+
+//organizing changelog
+e.g. one master, more changelogs in a folder e.g. per release
+include individual changeslog in master using include tag and filepath
+or includeAll tag which includes all files in a folder.
+
+//comments in changelog
+//view in changelog or usng dbDoc command

@@ -1,0 +1,6 @@
+<changeSet id="noRollback" author="nvoxland">
+    <createTable tableName="changeRollback">
+        <column name="id" type="int"/>
+    </createTable>
+    <rollback/>
+</changeSet>
