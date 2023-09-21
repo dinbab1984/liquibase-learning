@@ -30,5 +30,14 @@ liquibase history
 ## Generate doc with deployed changes for various purposes
 liquibase --changelog-file=changelog.xml db-doc 2023_09_21_db-doc
 
+## tag databse changes
+liquibase --changelog-file=tagDatabase.xml update
+liquibase tag version1
 
+## rollback tag
+liquibase --changelog-file=tagDatabase.xml rollback-sql version1
+liquibase --changelog-file=tagDatabase.xml rollback version1
 
+## update-t0-tag
+liquibase --changelog-file=tagDatabase.xml update-to-tag-sql version1
+liquibase --changelog-file=tagDatabase.xml update-to-tag version1
