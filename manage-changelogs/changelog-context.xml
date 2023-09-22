@@ -1,0 +1,22 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.0.xsd ">
+    <changeSet  author="liquibase-docs"  id="1" context="DEV">
+        <createTable schemaName="public" tableName="DEV"> 
+            <column  name="address"  type="varchar(255)"/> 
+        </createTable>  
+    </changeSet>
+    <changeSet  author="liquibase-docs"  id="2" context="QA">
+        <createTable schemaName="public" tableName="QA"> 
+            <column  name="address"  type="varchar(255)"/> 
+        </createTable>  
+    </changeSet>
+    <changeSet  author="liquibase-docs"  id="3">
+        <createTable schemaName="public" tableName="ALL"> 
+            <column  name="address"  type="varchar(255)"/> 
+        </createTable>  
+    </changeSet>
+</databaseChangeLog>

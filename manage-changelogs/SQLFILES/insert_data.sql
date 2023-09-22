@@ -1,0 +1,1 @@
+insert into dummy values ('dummy text');
