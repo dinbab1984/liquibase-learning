@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"  
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.3.xsd ">  
+    
+    <changeSet id="hr_benefits_rep" author="spider.man" context="HR">
+        <createTable tableName="benefits_rep">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(10)"/>
+            <column name="phone" type="varchar(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="oc_online_orders" author="wonder.woman" context="OC">
+        <createTable tableName="online_orders">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="product_id" type="varchar(10)"/>
+            <column name="customer_id" type="varchar(10)"/>
+            <column name="price" type="decimal(3,2)"/>
+            <column name="quantity" type="int"/>
+        </createTable>
+     </changeSet>
+     <changeSet id="sh_sales_conf" author="black.widow" context="SH">
+        <createTable tableName="sales_conf">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="sales_conf_name" type="varchar(20)"/>
+            <column name="sales_conf_date" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="corp-office" author="bat.man">
+        <createTable tableName="office_codes">
+            <column name="id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="office_name" type="varchar(20)"/>
+            <column name="office_ext" type="varchar(4)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
